@@ -48,6 +48,73 @@ export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
 ```
 
+# KeywordResearchV1:: Script
+
+This is a script meant to be ran with Juypter for educational purposes, if you run this via bash (bourne again shell aka terminal) you'll need to add print statements in between your panda data frames to be as verbose as you can via terminal enviornment. This is a way to see the results of what you're doing step by step. You can also code a delay so you can pause between major chucks of code.
+
+For Example::
+
+import advertools as adv
+import plotly.graph_objects as go
+import pandas as pd
+
+safelite_generic = adv.sitemap_to_df('https://www.safelite.com/sitemap.xml')
+safelite_images = adv.sitemap_to_df('https://www.safelite.com/image-sitemap.xml')
+
+safelite = pd.concat([safelite_generic, safelite_images], ignore_index=True)
+
+```
+Here comes the print function, it takes the above line there and prints out the variable that we have the panda data frame
+
+Many developers do this for debugging, get use to printing things out very powerful but entry level way to learn how to debug your shit!
+
+```
+print(safelite)
+
+```
+                                                   loc  \
+0                             https://www.safelite.com/   
+1            https://www.safelite.com/windshield-repair   
+2     https://www.safelite.com/windshield-auto-glass...   
+3     https://www.safelite.com/safelite-group-privac...   
+4     https://www.safelite.com/about-safelite/safeli...   
+...                                                 ...   
+2088  https://espanol.safelite.com/resource-center/c...   
+2089  https://espanol.safelite.com/resource-center/c...   
+2090  https://espanol.safelite.com/resource-center/a...   
+2091  https://espanol.safelite.com/resource-center/c...   
+2092  https://www.safelite.com/resource-center/auto-...   
+
+                       lastmod changefreq  priority  \
+0    2019-10-24 00:00:00+00:00      daily       1.0   
+1    2019-10-24 00:00:00+00:00      daily       0.9   
+2    2019-10-24 00:00:00+00:00      daily       0.9   
+3    2019-10-24 00:00:00+00:00      daily       0.9   
+4    2019-10-24 00:00:00+00:00      daily       0.9   
+...                        ...        ...       ...   
+2088 2018-03-16 00:00:00+00:00      daily       0.5   
+2089 2018-03-16 00:00:00+00:00      daily       0.5   
+2090 2018-03-16 00:00:00+00:00      daily       0.5   
+2091 2018-03-16 00:00:00+00:00      daily       0.5   
+2092 2018-03-16 00:00:00+00:00      daily       0.5   
+
+                                         sitemap image  
+0           https://www.safelite.com/sitemap.xml   NaN  
+1           https://www.safelite.com/sitemap.xml   NaN  
+2           https://www.safelite.com/sitemap.xml   NaN  
+3           https://www.safelite.com/sitemap.xml   NaN  
+4           https://www.safelite.com/sitemap.xml   NaN  
+...                                          ...   ...  
+2088  https://www.safelite.com/image-sitemap.xml        
+2089  https://www.safelite.com/image-sitemap.xml        
+2090  https://www.safelite.com/image-sitemap.xml        
+2091  https://www.safelite.com/image-sitemap.xml        
+2092  https://www.safelite.com/image-sitemap.xml        
+
+[2093 rows x 6 columns]
+
+```
+
 ## Authors
 
 **Chad Buie** 
